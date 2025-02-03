@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-=======
 # 📌 Phnyx Assignment - 프로젝트 개요 및 개발 가이드
 
 ## 🚀 프로젝트 실행 방법
@@ -69,4 +59,70 @@ yarn dev
 - 그 외 아이콘 및 미반영 ui 전체
 
 감사합니다!
->>>>>>> f50ddef (README.md 설명 추가)
+
+-
+
+# 📌 Phnyx Assignment - Project Overview & Development Guide
+
+## 🚀 How to Run the Project
+### 1️⃣ **Clone the Repository**
+```sh
+git clone https://github.com/Phnyx-Lab/interview-yurim-lee.git
+cd interview-yurim-lee
+```
+
+### 2️⃣ **Install Dependencies**
+```sh
+yarn install
+```
+
+### 3️⃣ **Start the Local Server**
+```sh
+yarn dev
+```
+- Open the browser and visit `http://localhost:5173` to check if the project is running.
+
+---
+
+## 🏗 **Technologies & Design Patterns Used**
+### 1️⃣ **Atomic Design Pattern Implementation**
+- **Atoms:** Small UI elements like `Button`, `SelectBox`, and `OutputBox`.
+- **Molecules:** Components combining multiple atoms, such as `TextInput` and `ModeSelector`.
+- **Organisms:** More complex components that include multiple molecules, such as `SummaryForm` and `Sidebar`.
+- **Templates:** Structural components like `InputTemplate` that assemble organisms into layouts.
+- **Pages:** The highest-level components, such as `SummaryMain`, that form a complete UI page.
+
+📌 **Atomic Design Pattern was applied to ensure modular, reusable, and maintainable UI components.**
+
+### 2️⃣ **Emotion Styled for Styling**
+- Used `@emotion/styled` for **CSS-in-JS styling**.
+- Applied `shouldForwardProp` to prevent unnecessary props like `isExpanded` and `isHidden` from being passed to the DOM.
+
+📌 **Ensures a clean and scalable styling approach.**
+
+### 3️⃣ **Material-UI (MUI) for UI Components**
+- Leveraged `@mui/material` to create a **consistent design system**.
+- Used various MUI components like `Box`, `Typography`, `Divider`, `TextField`, and `ToggleButtonGroup`.
+
+📌 **MUI was chosen to ensure a rapid, responsive, and visually consistent UI.**
+
+---
+
+## 🔴 **Unresolved Issues**
+### ❌ **Scroll-Based Expansion Not Working**
+- **Intended Behavior:** When scrolling down, `TopSection` should disappear, and `SummaryForm` should expand.
+- **Current Issue:** `window.scrollY` detection via `useEffect` was attempted, but `SummaryForm` does not dynamically adjust its height properly.
+- **Root Cause:** `isExpanded` state is not correctly propagated across `SummaryForm`, `TextInput`, and `OutputBox`.
+
+### ❌ **Incomplete Language Selection & Search Features**
+- The implementation of language selection tabs and search functionality was planned but **not completed** due to time constraints.
+
+📌 **Future Fixes Required:**
+- Adjust `useEffect` scroll detection logic.
+- Ensure `isExpanded` properly updates child components.
+- Finalize the integration of missing UI elements like icons and text alignment.
+
+---
+
+**Thank you! Let me know if you need further refinements.** 😊
+
