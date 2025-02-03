@@ -1,10 +1,9 @@
 import { Box } from "@mui/material";
 import styled from "@emotion/styled";
-import PropTypes from "prop-types";
 
-const Wrapper = styled(Box)`
-  flex: 1; /* Matches TextInput */
-  height: ${({ isExpanded }) => (isExpanded ? "100%" : "70%")}; /* Adjusts height */
+const Wrapper = styled(Box, { shouldForwardProp: (prop) => prop !== "isExpanded" })`
+  flex: 1;
+  height: ${({ isExpanded }) => (isExpanded ? "100%" : "70%")};
   background-color: #f9fafc;
   border-radius: 10px;
   display: flex;
@@ -14,14 +13,7 @@ const Wrapper = styled(Box)`
 `;
 
 const OutputBox = ({ isExpanded }) => {
-  return (
-    <Wrapper isExpanded={isExpanded}>
-        {/* <p>OutputBox</p> */}
-    </Wrapper>
-  );
-};
-OutputBox.propTypes = {
-  isExpanded: PropTypes.bool.isRequired,
+  return <Wrapper isExpanded={isExpanded}>{/* Content */}</Wrapper>;
 };
 
 export default OutputBox;
