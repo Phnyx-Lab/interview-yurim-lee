@@ -56,7 +56,7 @@ const InputTemplate = () => {
 
   return (
     <Container>
-      <Divider sx={{ width: "100%", marginBottom: "30px", backgroundColor: "#f7f7f7" }} />
+      <Divider sx={{ width: "150%", marginBottom: "30px", backgroundColor: "#f7f7f7" }} />
 
       {/* The Top Section disappears on scroll */}
       <TopSection isHidden={isHidden}>
